@@ -1,0 +1,52 @@
+@use "../mixins/fontStack";
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+.legend__item {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+  padding: 0 24px 0 0;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    color: currentColor;
+    background: currentColor;
+    height: 10px;
+    margin-right: 12px;
+    border: 1px solid currentColor;
+  }
+}
+
+.legend__item--square {
+  &::before {
+    width: 10px;
+    transform: rotate(-45deg);
+  }
+}
+
+.legend__item--circle {
+  &::before {
+    width: 10px;
+    border-radius: 50%;
+  }
+}
+
+.legend__item--line {
+  &::before {
+    width: 4px;
+  }
+}
+
+.legend__item--block {
+  &::before {
+    width: 10px;
+  }
+}

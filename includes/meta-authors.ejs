@@ -1,0 +1,8 @@
+<%
+  const authors = config.meta.authors
+    .map(author => `<a href="${author.link}" target="_blank" rel="noopener">${author.name}</a>`)
+
+  const authorsFormatted = authors.length === 1 ? authors[0] : `${authors.slice(0, -1).join(', ')} en ${authors.slice(-1)}`
+%>
+
+<%- authorsFormatted %>

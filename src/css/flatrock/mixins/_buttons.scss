@@ -1,0 +1,36 @@
+@use "../variables/colours";
+@use "../mixins/fontStack";
+
+@mixin button {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: black;
+  background: colours.$soapstonegrey;
+  padding: 9px;
+  border: none;
+  appearance: none;
+  outline: 0;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: white;
+      background: colours.$neroblack-40;
+    }
+  }
+
+  &[disabled] {
+    cursor: default;
+    color: lighten(black, 80);
+
+    &:hover {
+      color: lighten(black, 80);
+      background: colours.$soapstonegrey;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use "../variables/colours";
+@use "../mixins/fontStack";
+
+@mixin input {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 1rem;
+  font-weight: 300;
+  background-color: colours.$forgetmenotsalmon;
+  padding: 6px 12px;
+  border: 2px solid #ece5dc;
+  outline: none;
+}

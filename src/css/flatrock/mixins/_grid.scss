@@ -1,0 +1,47 @@
+@use "sass:math";
+
+@mixin grid($max-width: 1362px, $padding: (
+  0: 15px,
+  768: 40px
+)) {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @if type-of($padding) == map {
+    padding: 0 #{map-get($padding, 0)};
+
+    @each $breakpoint, $paddingSize in $padding {
+      @if $breakpoint != 0 {
+        @media (min-width: #{$breakpoint}px) {
+          padding: 0 #{$paddingSize};
+        }
+      }
+    }
+  }
+
+  @else {
+    padding: 0 #{$padding};
+  }
+}
+
+@mixin gridRow {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -9px;
+}
+
+@mixin gridCol {
+  flex-grow: 1;
+  padding: 9px;
+}
+
+@mixin gridSize($cols) {
+  flex-grow: 0;
+  flex-basis: percentage(math.div($cols, 12));
+  max-width: percentage(math.div($cols, 12));
+}
+
+@mixin gridLeft($cols) {
+  margin-left: percentage(math.div($cols, 12));
+}

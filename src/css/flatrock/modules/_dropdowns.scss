@@ -1,0 +1,26 @@
+@use "../variables/colours";
+@use "../mixins/fontStack";
+
+.dropdown {
+  @include fontStack.fontStack("sansSerif");
+
+  display: inline-block;
+  background-color: colours.$soapstonegrey;
+  margin-bottom: 30px;
+  padding: 5px;
+}
+
+.dropdown--light {
+  background-color: colours.$forgetmenotsalmon;
+}
+
+.dropdown__select {
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: transparent;
+  border-width: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}

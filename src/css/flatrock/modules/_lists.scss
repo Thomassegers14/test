@@ -1,0 +1,50 @@
+@use "../variables/colours";
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list__item {
+  line-height: 1.6;
+  margin: 0 0 8px 0;
+  padding-left: 18px;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    color: colours.$denimblue;
+    background: currentColor;
+    width: 9px;
+    height: 9px;
+    margin: 0;
+    border: 1px solid currentColor;
+    position: absolute;
+    top: 8px;
+    left: 0;
+  }
+}
+
+.list__item--square {
+  &::before {
+    left: 2px;
+    transform: rotate(-45deg);
+  }
+}
+
+.list__item--circle {
+  &::before {
+    border-radius: 50%;
+  }
+}
+
+.list__item--line {
+  &::before {
+    width: 4px;
+    top: 9px;
+    left: 2px;
+  }
+}
+
+// As with legends, there is now also a `block` option available. This is not included here as separate modifier since it actually corresponds to the default behaviour of out `list__item` class.

@@ -1,0 +1,13 @@
+<%
+    const months = {
+      nl: ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'],
+      fr: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+    };
+    const parsedDate = new Date(`${config.meta.modified} 12:00:00`); 
+
+    const day = parsedDate.getDate()
+    const month = parsedDate.getMonth()
+    const year = parsedDate.getFullYear()
+%>
+
+<%- day %> <%- months[site.language][month] %> <%- year %>

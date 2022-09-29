@@ -1,0 +1,35 @@
+@use "../variables/colours";
+@use "../mixins/fontStack";
+
+.insetbox {
+  background-color: colours.$soapstonegrey;
+  margin: 40px 0;
+  padding: 16px;
+}
+
+.insetbox__item {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 0.9rem;
+}
+
+.insetbox__item--asList {
+  margin-left: 2.4rem;
+  position: relative;
+
+  &::before {
+    content: "\25A0";
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0.1rem;
+    left: -1rem;
+  }
+}
+
+.insetbox__item--circle::before {
+  content: "\25CB";
+}
+
+.insetbox__item--disc::before {
+  content: "\25CF";
+}

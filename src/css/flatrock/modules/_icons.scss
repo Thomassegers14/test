@@ -1,0 +1,39 @@
+@font-face {
+  font-family: Flatrock;
+  src: url("https://multimedia.tijd.be/shared/fonts/Flatrock.woff2") format("woff2"), url("https://multimedia.tijd.be/shared/fonts/Flatrock.woff") format("woff");
+}
+
+.icon {
+  font-family: Flatrock; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+}
+
+.icon--chevron-down::before {
+  content: "\f078";
+}
+
+.icon--chevron-left::before {
+  content: "\f053";
+}
+
+.icon--chevron-right::before {
+  content: "\f054";
+}
+
+.icon--chevron-up::before {
+  content: "\f077";
+}
+
+.icon--tag::before {
+  content: "\f02b";
+}
+
+.icon--sort-amount-asc::before {
+  content: "\f160";
+}
+
+.icon--sort-amount-desc::before {
+  content: "\f161";
+}

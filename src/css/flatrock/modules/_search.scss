@@ -1,0 +1,24 @@
+@use "../mixins/buttons";
+@use "../mixins/inputs";
+@use "../variables/colours";
+
+.searchBox {
+  display: flex;
+}
+
+.searchBox__input {
+  @include inputs.input();
+}
+
+.searchBox__button {
+  @include buttons.button();
+}
+
+.searchBox__button--dark {
+  color: white;
+  background-color: colours.$neroblack-60;
+}
+
+.searchBox__icon {
+  display: block;
+}

@@ -1,0 +1,90 @@
+@use "../variables/colours";
+@use "../mixins/grid";
+@use "../mixins/links";
+@use "../mixins/fontStack";
+
+.related {
+  @include grid.gridSize(12);
+
+  @media (min-width: 768px) {
+    @include grid.gridSize(8);
+    @include grid.gridLeft(2);
+  }
+
+  @media (min-width: 1200px) {
+    @include grid.gridSize(6);
+    @include grid.gridLeft(3);
+  }
+
+  margin-bottom: 36px;
+}
+
+.related__sectionTitle {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: colours.$massalagrey;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAFCAYAAACEhIafAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDAgNzkuMTYwNDUxLCAyMDE3LzA1LzA2LTAxOjA4OjIxICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+LUNEtwAAABBJREFUCJljSE6I+M+ABQAALnwCG8ZE3WgAAAAASUVORK5CYII=");
+  line-height: 1;
+  margin-bottom: 24px;
+
+  & span {
+    display: inline-block;
+    background-color: colours.$forgetmenotsalmon;
+    padding-right: 14px;
+  }
+}
+
+.related__group {
+  @include grid.gridRow();
+}
+
+.related__block {
+  @include grid.gridCol();
+}
+
+.related__date {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.related__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: colours.$prussianblue;
+  line-height: 1.4;
+  margin: 0 0 6px;
+}
+
+.related__body {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 0.9rem;
+  color: colours.$matterhorngrey;
+  line-height: 1.4;
+  margin: 15px 0 12px 0;
+}
+
+.related__link {
+  @include links.hideLinkBeforeHover();
+
+  &:hover {
+    background-color: initial;
+  }
+
+  &:hover .related__linkText {
+    color: colours.$irisblue;
+  }
+}
+
+.related__linkText {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: colours.$prussianblue;
+}

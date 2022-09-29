@@ -1,0 +1,19 @@
+{
+  "site": "tijd",
+  "directory": "webpage",
+  "url": "https://multimedia.tijd.be/webpage/",
+  "sharingImageUrl": "https://multimedia.tijd.be/webpage/images/promo/sharing.jpg",
+  "meta": {
+    "title": "landcover",
+    "description": "landcover",
+    "twitterSharingText": "landcover",
+    "authors": [
+      {
+        "name": "Thomas Segers",
+        "link": "https://www.tijd.be"
+      }
+    ],
+    "published": "2022-05-19",
+    "modified": "2022-05-19"
+  }
+}

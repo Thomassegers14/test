@@ -1,0 +1,32 @@
+[
+  {
+    "selector": ".nav__sharing",
+    "template": "nav__sharing.ejs",
+    "replace": true
+  },
+  {
+    "selector": "[data-flatrock-meta-title]",
+    "template": "meta-title.ejs",
+    "replace": false
+  },
+  {
+    "selector": "[data-flatrock-meta-description]",
+    "template": "meta-description.ejs",
+    "replace": false
+  },
+  {
+    "selector": "[data-flatrock-meta-authors]",
+    "template": "meta-authors.ejs",
+    "replace": true
+  },
+  {
+    "selector": "[data-flatrock-meta-published]",
+    "template": "meta-published.ejs",
+    "replace": false
+  },
+  {
+    "selector": "[data-flatrock-meta-modified]",
+    "template": "meta-modified.ejs",
+    "replace": false
+  }
+]

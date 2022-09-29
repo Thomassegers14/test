@@ -1,0 +1,16 @@
+
+
+{
+  "id": "tijd",
+  "name": "De Tijd",
+  "title": "De Tijd",
+  "domain": "tijd",
+  "home": "https://www.tijd.be",
+  "twitter_handle": "tijd",
+  "ico": "https://multimedia.tijd.be/shared/favicons/tijd/favicon.ico",
+  "icoBig": "https://www.tijd.be/etc.clientlibs/settings/wcm/designs/tijd/clientlibs/headlibs/resources/favicon/apple-touch-icon.png",
+  "language": "nl",
+  "ga": "81",
+  "gtm": "GTM-TXJ3W5X",
+  "hasMeta": true
+}

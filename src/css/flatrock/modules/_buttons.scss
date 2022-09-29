@@ -1,0 +1,34 @@
+@forward "../mixins/buttons"; // By loading this module, we also get access to the (namespaced) mixin
+
+@use "../variables/colours";
+@use "../mixins/buttons";
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -18px;
+}
+
+.buttons__button {
+  @include buttons.button();
+
+  margin-top: 0;
+  margin-right: 8px;
+  margin-bottom: 18px;
+  margin-left: 0;
+}
+
+.buttons__button--light {
+  background-color: colours.$forgetmenotsalmon;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background: colours.$neroblack-60;
+    }
+  }
+}
+
+.buttons__button--active {
+  color: white;
+  background: colours.$prussianblue;
+}

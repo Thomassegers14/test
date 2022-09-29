@@ -1,0 +1,43 @@
+@use "../variables/colours";
+@use "../mixins/grid";
+@use "../mixins/type";
+
+html {
+  box-sizing: border-box;
+  background: colours.$forgetmenotsalmon;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; // We need this to have our grid work. There shouldn't be a reason to remove this.
+}
+
+.h-boundingBox {
+  @include grid.grid();
+}
+
+.body {
+  @include grid.gridRow();
+}
+
+.body__content {
+  @include grid.gridCol();
+  @include grid.gridSize(12);
+
+  @media (min-width: 768px) {
+    @include grid.gridSize(8);
+    @include grid.gridLeft(2);
+  }
+
+  @media (min-width: 1200px) {
+    @include grid.gridSize(6);
+    @include grid.gridLeft(3);
+  }
+}

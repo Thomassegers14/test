@@ -1,0 +1,20 @@
+@use "../variables/colours";
+
+.progressBar {
+  background-color: colours.$soapstonegrey;
+  width: 100%;
+  height: 4px;
+  position: fixed;
+  top: 38px;
+  left: 0;
+}
+
+.progressBar__progress {
+  display: block;
+  background-color: colours.$stoneblue;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: width 0.5s;
+}

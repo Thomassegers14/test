@@ -1,0 +1,15 @@
+{
+  "extends": "unobtrusive",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true
+  },
+  "globals": {
+    "d3": false,
+    "_": false
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  }
+}

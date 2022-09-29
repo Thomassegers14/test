@@ -1,0 +1,18 @@
+@use "../variables/colours";
+
+.footer {
+  background-color: colours.$prussianblue;
+  padding: 10px 0;
+}
+
+.footer__content {
+  max-width: 1362px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.footer p {
+  text-align: center;
+  color: colours.$floralwhite;
+  margin: 0;
+}

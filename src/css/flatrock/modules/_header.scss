@@ -1,0 +1,90 @@
+@use "../variables/colours";
+@use "../mixins/fontStack";
+@use "../mixins/grid";
+@use "../mixins/links";
+
+.header {
+  @include grid.gridRow();
+
+  margin-top: 96px;
+  margin-bottom: 52px;
+}
+
+.header__content {
+  @include grid.gridCol();
+  @include grid.gridSize(12);
+
+  @media (min-width: 768px) {
+    @include grid.gridSize(8);
+    @include grid.gridLeft(2);
+  }
+
+  @media (min-width: 1200px) {
+    @include grid.gridSize(6);
+    @include grid.gridLeft(3);
+  }
+}
+
+.header__title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: colours.$prussianblue;
+  line-height: 1.2;
+  margin: 0 0 36px;
+
+  @media (min-width: 768px) {
+    font-size: 3.5rem;
+  }
+}
+
+.header__text {
+  font-size: 1.2rem;
+  color: colours.$mercurygrey;
+  line-height: 1.5;
+  margin: 0 0 40px;
+
+  @media (min-width: 768px) {
+    font-size: 1.3rem;
+  }
+}
+
+.header__credits {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: colours.$prussianblue;
+  line-height: 1.5;
+  margin: 0;
+  padding: 20px 0;
+  border-top: 1px solid colours.$halfspanishsalmon;
+}
+
+.header__date {
+  font-weight: 400;
+  color: grey;
+
+  &::before {
+    content: " | ";
+  }
+}
+
+.header__credits a {
+  @include links.hideLinkBeforeHover();
+}
+
+.badge {
+  @include fontStack.fontStack("sansSerif");
+
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  color: colours.$pictonblue;
+}
+
+.badge--spaced {
+  margin: 38px 0 36px;
+}

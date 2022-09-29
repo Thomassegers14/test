@@ -1,0 +1,29 @@
+@use "../mixins/inputs";
+@use "../mixins/fontStack";
+
+.typeahead {
+  position: relative;
+}
+
+.typeahead__input {
+  @include inputs.input();
+}
+
+.typeahead__resultsList {
+  @include fontStack.fontStack("sansSerif");
+
+  background-color: white;
+  list-style-type: none;
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  z-index: 1;
+}
+
+.typeahead__result {
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.6;
+}

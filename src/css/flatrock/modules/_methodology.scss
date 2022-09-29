@@ -1,0 +1,34 @@
+@use "../variables/colours";
+@use "../mixins/fontStack";
+
+.methodology {
+  margin-top: 48px;
+}
+
+.methodology__title {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: colours.$massalagrey;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAFCAYAAACEhIafAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDAgNzkuMTYwNDUxLCAyMDE3LzA1LzA2LTAxOjA4OjIxICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+LUNEtwAAABBJREFUCJljSE6I+M+ABQAALnwCG8ZE3WgAAAAASUVORK5CYII=");
+  line-height: 1;
+  height: 17px;
+  margin-bottom: 36px;
+
+  & span {
+    display: inline-block;
+    background-color: colours.$forgetmenotsalmon;
+    padding-right: 14px;
+  }
+}
+
+.methodology__text {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: colours.$massalagrey;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}

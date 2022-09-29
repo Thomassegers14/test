@@ -1,0 +1,56 @@
+/* stylelint-disable no-duplicate-selectors  */
+
+@use "../functions/colours" as colourfunctions;
+@use "../variables/colours";
+@use "../mixins/fontStack";
+@use "../mixins/type";
+
+html {
+  font-family: Coranto, serif;
+  font-size: 17px;
+  color: colours.$neroblack;
+}
+
+/* stylelint-enable */
+
+p {
+  line-height: 1.7;
+}
+
+.h-dropcap::first-letter {
+  font-size: 5.5rem;
+  color: currentColor;
+  line-height: 3.5rem;
+  margin-top: 1.3rem;
+  margin-right: 0.5rem;
+  margin-left: 0.2rem;
+  float: left;
+}
+
+.body__title {
+  @include type.subheading();
+
+  margin: 90px 0 12px;
+}
+
+.label {
+  @include fontStack.fontStack("sansSerif");
+
+  letter-spacing: 0.5px;
+  color: black;
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+
+.h-highlight {
+  background-color: colours.$cinnabarred;
+  color: colourfunctions.contrastcolour(colours.$cinnabarred, (colours.$black, colours.$soapstonegrey));
+  display: inline;
+  font-weight: bold;
+  padding: 0.3rem;
+}
+
+::selection {
+  color: white;
+  background: colours.$orientblue;
+}

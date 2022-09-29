@@ -1,0 +1,21 @@
+.scrollyteller__stickyScreen {
+  width: 100%;
+  height: calc(100vh);
+  position: sticky;
+  position: -webkit-sticky;
+  background-color: #fef7ea;
+  top: 0;
+  transition: background-color 1000ms cubic-bezier(.455,.03,.515,.955);
+}
+
+.scrollyteller__movingScreen {
+  width: 100%;
+  height: calc(100vh);
+  position: relative;
+  z-index: 200;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.scrollyteller__content {
+  position: absolute;
+}

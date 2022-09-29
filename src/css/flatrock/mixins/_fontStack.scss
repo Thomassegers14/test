@@ -1,0 +1,17 @@
+@mixin fontStack($family) {
+  @if ($family == sansSerif) {
+    font-family: Roboto, sans-serif;
+  }
+
+  @else if ($family == serif) {
+    font-family: Coranto, serif;
+  }
+
+  @else if ($family == condensed) {
+    font-family: "Flama Condensed", sans-serif;
+  }
+
+  @else {
+    @error "Unknown font stack #{$family}";
+  }
+}

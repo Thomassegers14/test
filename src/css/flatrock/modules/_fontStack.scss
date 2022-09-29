@@ -1,0 +1,24 @@
+// Coranto (regular and bold
+@font-face {
+  font-family: Coranto;
+  src: url("https://multimedia.tijd.be/shared/fonts/Coranto2-Regular.woff2") format("woff2"), url("https://multimedia.tijd.be/shared/fonts/Coranto2-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: Coranto;
+  src: url("https://multimedia.tijd.be/shared/fonts/Coranto2-Bold.woff2") format("woff2"), url("https://multimedia.tijd.be/shared/fonts/Coranto2-Bold.woff") format("woff");
+  font-weight: bold;
+}
+
+// Flama Condensed (bold and light)
+@font-face {
+  font-family: "Flama Condensed";
+  src: url("https://multimedia.tijd.be/shared/fonts/FlamaCondensed-Light.woff2") format("woff2"), url("https://multimedia.tijd.be/shared/fonts/FlamaCondensed-Light.woff") format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Flama Condensed";
+  src: url("https://multimedia.tijd.be/shared/fonts/FlamaCondensed-Bold.woff2") format("woff2"), url("https://multimedia.tijd.be/shared/fonts/FlamaCondensed-Bold.woff") format("woff");
+  font-weight: 700;
+}

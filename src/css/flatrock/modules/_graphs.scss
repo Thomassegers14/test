@@ -1,0 +1,48 @@
+@use "../variables/colours";
+@use "../mixins/fontStack";
+@use "../mixins/links";
+
+.graph {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.graph__title {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: black;
+  line-height: 1.2;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid black;
+}
+
+.graph__subtitle {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: black;
+  line-height: 2.2;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.graph__source {
+  @include fontStack.fontStack("sansSerif");
+
+  font-size: 0.8rem;
+  color: grey;
+  line-height: 1.5;
+}
+
+.graph__link {
+  border: none;
+  box-shadow: none;
+  color: colours.$nevadagrey;
+  border-bottom: 1px solid grey;
+}
