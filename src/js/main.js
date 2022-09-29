@@ -1,9 +1,9 @@
 // set the dimensions and margin of the graph
 const margin = {
   top: 12,
-  right: 12,
+  right: 60,
   bottom: 12,
-  left: 90
+  left: 60
 }
 
 const $graphWrapper = d3.select(".graph")
@@ -67,13 +67,13 @@ const line = d3.lineRadial()
 
 // set x-axis
 const xAxis_major = d3.axisBottom(x)
-  .tickValues([new Date(2015, 0, 1), new Date(2016, 0, 1), new Date(2017, 0, 1), new Date(2018, 0, 1), new Date(2019, 0, 1)])
+  .tickValues([new Date(2016, 0, 1), new Date(2017, 0, 1), new Date(2018, 0, 1), new Date(2019, 0, 1)])
   .tickSize(-innerheight)
   .tickPadding(28)
   .tickFormat(d3.timeFormat('%Y'))
 
 const xAxis_minor = d3.axisBottom(x)
-  // .ticks(6)
+  // .ticks(width > 600 ? 12 * 5 : 10)
   .tickSize(-innerheight)
   .tickPadding(6)
   .tickFormat(d3.timeFormat('%b'))
