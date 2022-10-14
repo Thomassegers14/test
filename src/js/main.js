@@ -21,8 +21,8 @@ const innerheight = height - margin.top - margin.bottom
 // append the svg object to the body of the page
 const svg = $graphWrapper
   .append('svg:svg')
-  .attr('width', outerWidth)
-  .attr('height', outerHeight)
+  .attr('width', width)
+  .attr('height', height)
   .attr('class', 'svg-plot')
   .append('g')
   .attr('transform', `translate(${margin.left}, ${margin.top})`);
@@ -38,7 +38,12 @@ const y = d3.scaleLinear()
 
 // set radius scale
 const sizeScale = d3.scalePow()
-  .range([1, 5]);
+
+if (width > 768) {
+  sizeScale.range([1, 6]);
+} else {
+  sizeScale.range([0.5, 3]);
+}
 
 // set colour scaleSqrt
 const colourScale = d3.scaleOrdinal()
@@ -54,7 +59,7 @@ const colourScalePastel = d3.scaleOrdinal()
 const radius = Math.min(width, height) / 2; // radius of the whole chart
 
 const r = d3.scaleLinear()
-  .domain([0, 28])
+  .domain([-4, 28])
   .range([0, radius]);
 
 const line = d3.lineRadial()
@@ -97,8 +102,13 @@ Promise.all(files.map(url => d3.csv(url)))
         d.words = +d.words
     })
 
+    // Add r scale
+    sizeScale
+      .domain(d3.extent(data, d => d.words))
+
     d3.select(".scrollyteller__stickyScreen").classed("bg--dark", true)
 
+    drawRadialGraph(".header__viz", data)
     drawGraph(".graph", data)
 
     svg.selectAll('.dot').classed("hide", true)
@@ -254,14 +264,57 @@ Promise.all(files.map(url => d3.csv(url)))
     }
   })
 
+const drawRadialGraph = function(inputDiv, inputData) {
+
+  // set the dimensions and margin of the graph
+  const canvasMargin = {
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
+  }
+
+  const canvasWrapper = d3.select(".header__viz")
+
+  // Set outer dimensions
+  const {
+    width,
+    height
+  } = canvasWrapper.node().getBoundingClientRect()
+
+  // Init Canvas
+  const canvasChart = d3.select(".header__viz")
+    .append('canvas')
+    .attr('width', width)
+    .attr('height', height)
+    .style('margin-left', canvasMargin.left + 'px')
+    .style('margin-top', canvasMargin.top + 'px')
+    .attr('class', 'canvas-plot');
+
+  const context = canvasChart.node().getContext('2d');
+
+  // Draw on canvas
+  inputData.forEach(point => {
+    drawPoint(point);
+  });
+
+  function drawPoint(point) {
+    let coors = line([[reMap(point.day_of_the_year), point.hour_num]]).slice(1).slice(0, -1).split(",").map(function(x) {
+      return parseInt(x, 10);
+    });; // removes 'M' and 'Z' from string
+    context.beginPath();
+    context.globalAlpha = 0.4;
+    context.fillStyle = colourScalePastel(point.year);
+
+    context.arc(coors[[0]] + width / 2, coors[[1]] + height / 2, sizeScale(point.words), 0, 2 * Math.PI, true);
+    context.fill();
+  }
+}
+
 const drawGraph = function(inputDiv, inputData) {
 
   // set x domain
   x.domain([new Date(2015, 0, 0), new Date(2016, 3, 0)])
-
-  const xFlat = d3.scaleLinear()
-    .domain(d3.extent(inputData, d => d.day_of_the_year))
-    .range([0, innerwidth]);
 
   svg.append("line")
     .attr("class", "axis axis--midnight")
@@ -283,10 +336,6 @@ const drawGraph = function(inputDiv, inputData) {
   svg.append("g")
     .attr('class', 'axis axis--y')
     .call(yAxis);
-
-  // Add r scale
-  sizeScale
-    .domain(d3.extent(inputData, d => d.words))
 
   // Add dots
   svg.append('g')
