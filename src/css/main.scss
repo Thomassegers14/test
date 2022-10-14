@@ -189,3 +189,44 @@
 .bg--dark {
   background-color: #130c30;
 }
+
+.body__content--wide {
+  @media (min-width: 768px) {
+    @include gridSize(12);
+    @include gridLeft(0);
+  }
+}
+
+.dw_graph {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.titleWrapper {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $c-soapstonegrey;
+  margin: 60px 0;
+}
+
+.subtitle {
+  color: $c-neroblack-60;
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.stickyTitle {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.4;
+  padding-bottom: 48px;
+  border-bottom: 1px solid black;
+}
+
+.increaseMargin {
+  margin-bottom: 25vh;
+}
