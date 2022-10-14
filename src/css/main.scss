@@ -8,6 +8,11 @@
 // Modules, imported as needed (along with any namespaced mixins)
 @use "flatrock/modules/scrollyteller";
 
+html {
+  font-family: 'Crimson Pro', serif;
+  font-size: 20px;
+}
+
 .header{
   width: 100%;
   height: 100vh;
